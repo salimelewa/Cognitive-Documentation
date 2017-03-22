@@ -83,7 +83,7 @@ except Exception as e:
 #### Face - Detect Response
 A successful response will be returned in JSON. Following is an example of a successful response: 
 
-```php
+```json
 [
     {
         "faceId": "c5c24a82-6845-4031-9d5d-978df9175426",
