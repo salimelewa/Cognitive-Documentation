@@ -23,5 +23,5 @@ E		|Extended metadata (see table below) 	|String 	|none
 
 Name    | Description               
 --------|---------------------------	
-LKA.Afn		| affiliation's display name associated with the author  
-LKA.AfId		| affiliation's entity ID associated with the author
+LKA.Afn		| Last known affiliation's display name associated with the author  
+LKA.AfId		| Last known affiliation's entity ID associated with the author
