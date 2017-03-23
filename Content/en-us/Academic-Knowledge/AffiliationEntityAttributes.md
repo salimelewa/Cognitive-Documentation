@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API/Entity Attributes
+NavPath: Academic Knowledge API/Knowledge Exploration/Entity Attributes
 LinkLabel: Affiliation Entity
-Url: Academic-Knowledge-API/documentation/EntityAttributes/AffiliationEntity
+Url: Academic-Knowledge-API/documentation/KnowledgeExploration/EntityAttributes/AffiliationEntity
 Weight: 670
 -->
 
@@ -18,4 +18,3 @@ AfN		|Affiliation normalized name		|String		|Equals
 DAfN	|Affiliation display name		|String		|none
 CC		|Affiliation total citation count			|Int32		|none  
 ECC		|Affiliation total estimated citation count	|Int32		|none
-SSD		|Satori data 							|String		|none

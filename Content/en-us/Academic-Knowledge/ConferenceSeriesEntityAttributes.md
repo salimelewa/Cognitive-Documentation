@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API/Entity Attributes
+NavPath: Academic Knowledge API/Knowledge Exploration/Entity Attributes
 LinkLabel: Conference Series Entity
-Url: Academic-Knowledge-API/documentation/EntityAttributes/ConferenceSeriesEntity
+Url: Academic-Knowledge-API/documentation/KnowledgeExploration/EntityAttributes/ConferenceSeriesEntity
 Weight: 650
 -->
 
@@ -20,4 +20,3 @@ CC		|Conference series total citation count			|Int32		|none
 ECC		|Conference series total estimated citation count	|Int32		|none
 F.FId	|Field of study entity ID associated with the conference series |Int64 	| Equals
 F.FN	|Field of study name associated with the conference series 	| Equals,<br/>StartsWith
-SSD		|Satori data 							|String		|none

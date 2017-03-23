@@ -2,7 +2,7 @@
 NavPath: Academic Knowledge API
 LinkLabel: Overview
 Url: Academic-Knowledge-API/documentation/overview
-Weight: 1000
+Weight: 999
 -->
 
 # Academic Knowledge API
@@ -14,11 +14,12 @@ The MAG data is mined from the Bing web index as well as an in-house knowledge b
 For more information on the Microsoft Academic Graph, see [http://aka.ms/academicgraph](http://aka.ms/academicgraph).
 
 ## Features
-The Academic Knowledge API consists of four related REST endpoints:  
+The Academic Knowledge API consists of five related REST endpoints:  
   1. **interpret** – Interprets a natural language user query string. Returns annotated interpretations to enable rich search-box auto-completion experiences that anticipate what the user is typing.  
-  2. **evaluate** – Evaluates a query expression and returns Academic Knowledge entity results.  
+  2. **evaluate** – Evaluates a query expression and returns academic entity results.  
   3. **calchistogram** – Calculates a histogram of the distribution of attribute values for the academic entities returned by a query expression, such as the distribution of citations by year for a given author.  
   4. **graph search** – Searches for a given graph pattern and returns the matched entity results.
+  5. **similarity** – Calculate the academic similarity between two strings.
 
 Used together, these API methods allow you to create a rich semantic search experience. Given a user query string, the **interpret** method provides you with an annotated version of the query and a structured query expression, while optionally completing the user’s query based on the semantics of the underlying academic data. For example, if a user types the string *latent s*, the **interpret** method can provide a set of ranked interpretations, suggesting that the user might be searching for the field of study *latent semantic analysis*, the paper *latent structure analysis*, or other entity expressions starting with *latent s*. This information can be used to quickly guide the user to the desired search results.
 

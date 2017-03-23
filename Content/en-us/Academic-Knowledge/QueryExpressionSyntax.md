@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API
+NavPath: Academic Knowledge API/Knowledge Exploration
 LinkLabel: Query Expression Syntax
-Url: Academic-Knowledge-API/documentation/QueryExpressionSyntax
+Url: Academic-Knowledge-API/documentation/Knowledge Exploration/QueryExpressionSyntax
 Weight: 960
 -->
 
