@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API/Entity Attributes
+NavPath: Academic Knowledge API/Knowledge Exploration/Entity Attributes
 LinkLabel: Common Entity Attributes
-Url: Academic-Knowledge-API/documentation/EntityAttributes/Common Entity Attributes
+Url: Academic-Knowledge-API/documentation/KnowledgeExploration/EntityAttributes/CommonEntityAttributes
 Weight: 700
 -->
 
@@ -18,11 +18,11 @@ Ty 		|Entity type 				|enum	|Equals
 ### Entity type enum
 Name 															|value
 ----------------------------------------------------------------|-----
-[Paper](PaperEntityAttributes.md)								|0
-[Author](AuthorEntityAttributes.md)								|1
-[Journal](JournalEntityAttributes.md)	 						|2
-[Conference Series](JournalEntityAttributes.md)					|3
-[Conference Instance](ConferenceInstanceEntityAttributes.md)	|4
-[Affiliation](AffiliationEntityAttributes.md)					|5
-[Field Of Study](FieldsOfStudyEntity.md)						|6
+[Paper](PaperEntity.md)								|0
+[Author](AuthorEntity.md)								|1
+[Journal](JournalEntity.md)	 						|2
+[Conference Series](ConferenceSeriesEntity.md)					|3
+[Conference Instance](ConferenceInstanceEntity.md)	|4
+[Affiliation](AffiliationEntity.md)					|5
+[Field Of Study](FieldsOfStudy.md)						|6
 

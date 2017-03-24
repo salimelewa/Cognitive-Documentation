@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API/Graph Search Method
+NavPath: Academic Knowledge API/Graph Traversal
 LinkLabel: Lambda Search Syntax
-Url: Academic-Knowledge-API/documentation/LambdaSearchSyntax
+Url: Academic-Knowledge-API/documentation/GraphTraversal/LambdaSearchSyntax
 Weight: 90
 -->
 

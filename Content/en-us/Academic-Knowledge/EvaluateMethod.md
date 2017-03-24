@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API
+NavPath: Academic Knowledge API/Knowledge Exploration
 LinkLabel: Evaluate Method
-Url: Academic-Knowledge-API/documentation/EvaluateMethod
+Url: Academic-Knowledge-API/documentation/KnowledgeExploration/EvaluateMethod
 Weight: 980
 -->
 

@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API/Entity Attributes
+NavPath: Academic Knowledge API/Knowledge Exploration/Entity Attributes
 LinkLabel: Field Of Study Entity
-Url: Academic-Knowledge-API/documentation/EntityAttributes/FieldsOfStudyEntity
+Url: Academic-Knowledge-API/documentation/KnowledgeExploration/EntityAttributes/FieldsOfStudyEntity
 Weight: 660
 -->
 
@@ -21,4 +21,3 @@ ECC		|Field of total estimated citation count|Int32		|none
 FL		|Level in fields of study hierarchy 	|Int32		|Equals, <br/>IsBetween
 FP.FN	|Parent field of study name 			|String		|Equals
 FP.FId 	|Parent field of study ID 				|Int64 		|Equals
-SSD		|Satori data 							|String		|none

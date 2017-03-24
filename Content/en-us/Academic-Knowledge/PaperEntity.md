@@ -1,7 +1,7 @@
 <!-- 
-NavPath: Academic Knowledge API/Entity Attributes
+NavPath: Academic Knowledge API/Knowledge Exploration/Entity Attributes
 LinkLabel: Paper Entity
-Url: Academic-Knowledge-API/documentation/EntityAttributes/PaperEntity
+Url: Academic-Knowledge-API/documentation/KnowledgeExploration/EntityAttributes/PaperEntity
 Weight: 690
 -->
 # Paper Entity

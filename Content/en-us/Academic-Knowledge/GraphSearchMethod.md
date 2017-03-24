@@ -1,9 +1,10 @@
 <!-- 
-NavPath: Academic Knowledge API
+NavPath: Academic Knowledge API/Graph Traversal
 LinkLabel: Graph Search Method
-Url: Academic-Knowledge-API/documentation/GraphSearchMethod
+Url: Academic-Knowledge-API/documentation/GraphTraversal/GraphSearchMethod
 Weight: 80
 -->
+
 
 # Graph Search Method
 
