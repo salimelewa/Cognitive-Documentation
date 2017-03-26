@@ -10,6 +10,7 @@ This article provides information and code samples to help you quickly get start
 * [Analyze an image](#AnalyzeImage) 
 * [Intelligently generate a thumbnail](#GetThumbnail)
 * [Detect and extract text from an image](#OCR)
+* [Recognize handwriting in an image](#RecognizeText)
 
 ## Analyze an Image With Computer Vision API Using Java <a name="AnalyzeImage"> </a>
 With the [Analyze Image method](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa) you can extract visual features based on image content. You can upload an image or specify an image URL and choose which features to return, including:
@@ -395,4 +396,54 @@ Upon success, the OCR results returned include the detected text and bounding bo
   ]
 }
 
+```
+
+## Handwriting Recognition with Computer Vision API Using Java<a name="RecognizeText"> </a>
+Use the [RecognizeText method](https://ocr.portal.azure-api.net/docs/services/56f91f2d778daf23d8ec6739/operations/587f2c6a154055056008f200) to detect handwritten text in an image and extract recognized characters into a machine-usable character stream.
+
+#### Handwriting Java Example Request
+```Java
+// // This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
+import java.net.URI;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        HttpClient httpClient = new DefaultHttpClient();
+
+        try
+        {
+            URI uri = new URI("https://ocr.azure-api.net/vision/v1.0/recognizeText?handwriting=true");
+            HttpPost request = new HttpPost(uri);
+
+            // Request headers. Replace the example key below with your valid subscription key.
+            request.setHeader("Content-Type", "application/json");
+            request.setHeader("Ocp-Apim-Subscription-Key", "13hc77781f7e4b19b5fcdd72a8df7156");
+
+            // Request body. Replace the example URL with the URL of a JPEG image containing handwriting.
+            StringEntity requestEntity = new StringEntity("{\"url\":\"http://example.com/images/test.jpg\"}");
+            request.setEntity(requestEntity);
+
+            HttpResponse response = httpClient.execute(request);
+            HttpEntity entity = response.getEntity();
+
+            if (entity != null)
+            {
+                System.out.println(EntityUtils.toString(entity));
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+}
 ```
