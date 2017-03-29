@@ -8,6 +8,7 @@ Weight: 109
 # Computer Vision C# Quick Starts
 This article provides information and code samples to help you quickly get started using the Computer Vision API with C# to accomplish the following tasks: 
 * [Analyze an image](#AnalyzeImage) 
+* [Domain Specific Model: Landscape](#DomainSpecific-Landscape)
 * [Intelligently generate a thumbnail](#GetThumbnail)
 * [Detect and extract text from an Image](#OCR)
 
@@ -189,7 +190,7 @@ A successful response will be returned in JSON. Following is an example of a suc
 }
 ```
 
-## Domain Specific Model: Landscapes
+## Domain Specific Model: Landscapes <a name="DomainSpecific-Landscape"> </a>
 Use the Landscape method to identify a landmark in an image. You can upload an image or specify an image URL.
 
 #### Landscape C# Example Request
