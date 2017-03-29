@@ -8,6 +8,7 @@ Weight: 107
 # Computer Vision JavaScript Quick Starts
 This article provides information and code samples to help you quickly get started using JavaScript and the Computer Vision API to accomplish the following tasks: 
 * [Analyze an image](#AnalyzeImage) 
+* [Domain Specific Model](#DomainSpecificModel)
 * [Intelligently generate a thumbnail](#GetThumbnail)
 * [Detect and extract text from an Image](#OCR)
 
@@ -166,6 +167,85 @@ A successful response will be returned in JSON. Following is an example of a suc
   }
 }
 
+```
+
+## Domain Specific Model <a name="DomainSpecificModel"> </a>
+The Domain Specific Model is a model trained to identify a specific set of objects in an image. The two domain specific models that are currently available are celebrities and landmarks. The following example identifies a landmark in an image.
+
+#### Landscape JavaScript Example Request
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Sample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    $(function() {
+        var params = {
+            // Request parameters
+            "model": "landmarks", // Use "model": "celebrities" to use the Celebrity model.
+        };
+
+        $.ajax({
+            // Change "landmarks" to "celebrities" in the url to use the Celebrity model.
+            url: "https://westus.api.cognitive.microsoft.com/vision/v1.0/models/landmarks/analyze?" + $.param(params),
+
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Content-Type", "application/json");
+    
+                // Replace the "Ocp-Apim-Subscription-Key" value with a valid subscription key.
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "13hc77781f7e4b19b5fcdd72a8df7156");
+            },
+
+            type: "POST",
+
+            // Request body
+            data: '{"url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Space_Needle_2011-07-04.jpg"}',
+        })
+        
+        .done(function(data) {
+            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+        })
+        
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+            errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
+            alert(errorString);
+        });
+    });
+</script>
+REST response:
+<br><br>
+<textarea id="responseTextArea" class="UIInput" cols="120" rows="32"></textarea>
+</body>
+</html>
+```
+
+#### Landscape Example Response
+A successful response will be returned in JSON. Following is an example of a successful response:  
+
+```json
+{
+  "requestId": "e0970003-1cb7-4ac6-b0d4-f36a1914bf4e",
+  "metadata": {
+    "width": 2096,
+    "height": 4132,
+    "format": "Jpeg"
+  },
+  "result": {
+    "landmarks": [
+      {
+        "name": "Space Needle",
+        "confidence": 0.9998178
+      }
+    ]
+  }
+}
 ```
 
 ## Get a Thumbnail with Computer Vision API Using JavaScript <a name="GetThumbnail"> </a>

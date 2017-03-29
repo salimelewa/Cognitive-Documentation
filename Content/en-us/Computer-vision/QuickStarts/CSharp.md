@@ -8,7 +8,7 @@ Weight: 109
 # Computer Vision C# Quick Starts
 This article provides information and code samples to help you quickly get started using the Computer Vision API with C# to accomplish the following tasks: 
 * [Analyze an image](#AnalyzeImage) 
-* [Domain Specific Model: Landscape](#DomainSpecific-Landscape)
+* [Domain Specific Model](#DomainSpecificModel)
 * [Intelligently generate a thumbnail](#GetThumbnail)
 * [Detect and extract text from an Image](#OCR)
 
@@ -190,8 +190,8 @@ A successful response will be returned in JSON. Following is an example of a suc
 }
 ```
 
-## Domain Specific Model: Landscapes <a name="DomainSpecific-Landscape"> </a>
-Use the Landscape method to identify a landmark in an image. You can upload an image or specify an image URL.
+## Domain Specific Model <a name="DomainSpecificModel"> </a>
+The Domain Specific Model is a model trained to identify a specific set of objects in an image. The two domain specific models that are currently available are celebrities and landmarks. The following example identifies a landmark in an image.
 
 #### Landscape C# Example Request
 
@@ -228,9 +228,9 @@ namespace CSHttpClientSample
             var client = new HttpClient();
 
             // Request headers. Replace the second parameter with a valid subscription key.
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "13hc77781f7e4b19b5fcdd72a8df7156");
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d223616dc43a42c2b17ea2394e418e9c");
 
-            // Request parameters. A third optional parameter is "details".
+            // Request parameters. Change "landmarks" to "celebrities" on requestParameters and uri to use the Celebrities model.
             string requestParameters = "model=landmarks";
             string uri = "https://westus.api.cognitive.microsoft.com/vision/v1.0/models/landmarks/analyze?" + requestParameters;
             Console.WriteLine(uri);
