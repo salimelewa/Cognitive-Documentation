@@ -44,7 +44,7 @@ namespace CSHttpClientSample
 
             MakeAnalysisRequest(imageFilePath);
 
-            Console.WriteLine("\n\n\nHit ENTER to exit...");
+            Console.WriteLine("\n\nHit ENTER to exit...\n");
             Console.ReadLine();
         }
 
@@ -78,6 +78,9 @@ namespace CSHttpClientSample
                 // The other content types you can use are "application/json" and "multipart/form-data".
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
                 response = await client.PostAsync(uri, content);
+                string contentString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("Response:\n");
+                Console.WriteLine(contentString);
             }
         }
     }
@@ -184,7 +187,93 @@ A successful response will be returned in JSON. Following is an example of a suc
     "lineDrawingType": 0
   }
 }
+```
 
+## Domain Specific Model: Landscapes
+Use the Landscape method to identify a landmark in an image. You can upload an image or specify an image URL.
+
+#### Landscape C# Example Request
+
+```c#
+using System;
+using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
+
+namespace CSHttpClientSample
+{
+    static class Program
+    {
+        static void Main()
+        {
+            Console.Write("Enter image file path: ");
+            string imageFilePath = Console.ReadLine();
+
+            MakeAnalysisRequest(imageFilePath);
+
+            Console.WriteLine("\n\nHit ENTER to exit...\n");
+            Console.ReadLine();
+        }
+
+        static byte[] GetImageAsByteArray(string imageFilePath)
+        {
+            FileStream fileStream = new FileStream(imageFilePath, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader(fileStream);
+            return binaryReader.ReadBytes((int)fileStream.Length);
+        }
+
+        static async void MakeAnalysisRequest(string imageFilePath)
+        {
+            var client = new HttpClient();
+
+            // Request headers. Replace the second parameter with a valid subscription key.
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "13hc77781f7e4b19b5fcdd72a8df7156");
+
+            // Request parameters. A third optional parameter is "details".
+            string requestParameters = "model=landmarks";
+            string uri = "https://westus.api.cognitive.microsoft.com/vision/v1.0/models/landmarks/analyze?" + requestParameters;
+            Console.WriteLine(uri);
+
+            HttpResponseMessage response;
+
+            // Request body. Try this sample with a locally stored JPEG image.
+            byte[] byteData = GetImageAsByteArray(imageFilePath);
+
+            using (var content = new ByteArrayContent(byteData))
+            {
+                // This example uses content type "application/octet-stream".
+                // The other content types you can use are "application/json" and "multipart/form-data".
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                response = await client.PostAsync(uri, content);
+                string contentString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("Response:\n");
+                Console.WriteLine(contentString);
+            }
+        }
+    }
+}
+```
+
+#### Landscape Example Response
+A successful response will be returned in JSON. Following is an example of a successful response:  
+
+```json
+{
+  "requestId": "b15f13a4-77d9-4fab-a701-7ad65bcdcaed",
+  "metadata": {
+    "width": 1024,
+    "height": 680,
+    "format": "Jpeg"
+  },
+  "result": {
+    "landmarks": [
+      {
+        "name": "Space Needle",
+        "confidence": 0.9448209
+      }
+    ]
+  }
+}
 ```
 
 ## Get a Thumbnail with Computer Vision API Using C# <a name="GetThumbnail"> </a>
